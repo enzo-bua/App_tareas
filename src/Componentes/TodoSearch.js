@@ -3,21 +3,21 @@ import '../Styles/TodoSearch.css';
 import { TodoContext } from "../TodoContext";
 
 function TodoSearch() {
-  const { searchValue, setSearch } = React.useContext(TodoContext);
+  const { searchValue, setSearchValue } = React.useContext(TodoContext);
   
-  const onSerchValueChange = (event) =>{
+  const onSearchValueChange = (event) => {
     console.log(event.target.value);
-    setSearch(event.target.value);
+    setSearchValue(event.target.value);
   };
 
-  return(
-    <input 
-    className="TodoSearch" 
-    placeholder="Buscar tarea"
-    value={searchValue}
-    onChange={onSerchValueChange}
+  return (
+    <input
+      className="TodoSearch"
+      placeholder="Buscar Tarea"
+      value={searchValue}
+      onChange={onSearchValueChange}
     />
   );
 }
 
-export { TodoSearch }; 
+export { TodoSearch };

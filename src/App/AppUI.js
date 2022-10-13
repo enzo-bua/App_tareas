@@ -9,6 +9,7 @@ import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
 
 function AppUI () {
+  const [searchValue, setSearch ] = React.useState('')
   const { 
     error, 
     loading,
@@ -23,13 +24,15 @@ function AppUI () {
     <React.Fragment> 
     
       <TodoCounter/>
-    
-      <TodoSearch />
+      <TodoSearch
+        searchValue={searchValue}
+        setSearch={setSearch}
+      />
   
       <TodoList>
         {error && <p>Hubo un error...</p>}
         {loading && <p>Cargando...</p>}
-        {(!loading && !searchedTodos.length) && <p>Crea tu primer Tarea!</p>}
+        {(!loading && !searchedTodos.length) && <p>Crea tu primer Tareaa!</p>}
         
         {searchedTodos.map(todo => (
           <TodoItem 
